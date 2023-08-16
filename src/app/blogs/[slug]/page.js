@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Tag from "@/src/components/Elements/Tag";
 import BlogDetails from "@/src/components/Blog/BlogDetails";
+import { slug } from "github-slugger";
 
 export const generateStaticParams = async () =>
   allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
@@ -32,7 +33,7 @@ const BlogLayout = ({ params }) => {
         <div className="w-full z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Tag
             name={blog.tags[0]}
-            link={`/categories/${blog.tags[0]}`}
+            link={`/categories/${slug(blog.tags[0])}`}
             className="px-6 text-sm py-2 !border"
           />
 
