@@ -30,7 +30,7 @@ const HomeCoverSection = ({allBlogs}) => {
           <h1 className=" group mt-6 font-bold capitalize text-light text-4xl relative ">
             {/* {blog.title} */}
 
-            <span class="bg-gradient-to-r from-accent to-accent bg-[length:0px_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_6px] dark:from-purple-800 dark:to-purple-900">
+            <span className="bg-gradient-to-r from-accent to-accent bg-[length:0px_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_6px] dark:from-purple-800 dark:to-purple-900">
               {blog.title}
             </span>
           </h1>
