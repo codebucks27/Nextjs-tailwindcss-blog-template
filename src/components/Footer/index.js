@@ -13,7 +13,7 @@ const Footer = () => {
   console.log(errors);
 
   return (
-    <footer className="mt-32 rounded-2xl bg-dark dark:bg-light m-10 pt-0 flex flex-col items-center text-light dark:text-dark">
+    <footer className="mt-16 rounded-2xl bg-dark dark:bg-light m-10 pt-0 flex flex-col items-center text-light dark:text-dark">
       <h3 className="mt-16 font-medium capitalize text-4xl">
         interesting stories | updates | guides
       </h3>
