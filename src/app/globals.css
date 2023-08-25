@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  scroll-behavior: smooth;
+}
+
 code {
   counter-reset: line;
 }
@@ -85,3 +89,4 @@ h3 > a > .icon.icon-link:before {
 h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
   text-decoration: none !important;
 }
+
