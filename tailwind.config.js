@@ -11,11 +11,13 @@ module.exports = {
       colors:{
        dark: "#1b1b1b",
        light: "#fff",
-       accent: "#7B00D3",
+       accent: "#7B00D3",  // 64C4ED
+       accentDark : "#ffdb4d",
        gray: "#747474"
       },
       fontFamily:{
-        mr: ['var(--font-mr)']
+        mr: ['var(--font-mr)'],
+        in: ['var(--font-in)']
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

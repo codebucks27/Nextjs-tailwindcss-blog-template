@@ -4,7 +4,14 @@ import Logo from "./Logo";
 import Search from "./Search";
 import Link from "next/link";
 import { useThemeSwitch } from "../Hooks/useThemeSwitch";
-import { MoonIcon, SunIcon } from "../Icons";
+import {
+  DribbbleIcon,
+  GithubIcon,
+  LinkedinIcon,
+  MoonIcon,
+  SunIcon,
+  TwitterIcon,
+} from "../Icons";
 
 const Header = () => {
   const [mode, setMode] = useThemeSwitch();
@@ -40,7 +47,23 @@ const Header = () => {
           )}
         </button>
       </nav>
-      <Search />
+
+      <div className="flex items-center">
+        <Link href="" className="w-6 h-6 mr-4">
+          <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" />
+        </Link>
+        <Link href="" className="w-6 h-6 mr-4">
+          <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
+        </Link>
+        <Link href="" className="w-6 h-6 mr-4">
+          <GithubIcon className="hover:scale-125 transition-all ease duration-200" />
+        </Link>
+        <Link href="" className="w-6 h-6 mr-4">
+          <DribbbleIcon className="hover:scale-125 transition-all ease duration-200" />
+        </Link>
+      </div>
+
+      {/* <Search /> */}
     </header>
   );
 };

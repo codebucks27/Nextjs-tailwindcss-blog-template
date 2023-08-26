@@ -3,8 +3,8 @@ import profileCharacter from "../../../public/character.png";
 
 const AboutCoverSection = () => {
   return (
-    <section className="w-full h-[75vh] border-b-2 border-solid border-dark flex items-center justify-center">
-      <div className="inline-block w-1/2 h-full border-r-2 border-solid border-dark">
+    <section className="w-full h-[75vh] border-b-2 border-solid border-dark flex items-center justify-center dark:border-light text-dark dark:text-light">
+      <div className="inline-block w-1/2 h-full border-r-2 border-solid border-dark dark:border-light">
         <Image
           src={profileCharacter}
           alt="CodeBucks"
