@@ -32,8 +32,14 @@ module.exports = {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(-100%)' },
         }
-      }
+      },
+      screens: {
+        sxl: "1180px",
+        // => @media (max-width: 1535px) { ... }
+  
+      },
     },
+
   },
   plugins: [
     require('@tailwindcss/typography'),

@@ -51,9 +51,9 @@ const Category = ({ params }) => {
   if (!blogs) throw new Error(`Blogs not found for slug: ${params.slug}`);
 
   return (
-    <article className="mt-12 flex flex-col">
-      <div className="mx-32 flex flex-col">
-        <h1 className=" group mt-6 font-semibold  text-5xl leading-tight relative w-5/6">
+    <article className=" mt-8 sm:mt-12 flex flex-col">
+      <div className="px-5 sm:px-10 md:px-24 sxl:px-32 flex flex-col">
+        <h1 className=" group mt-6 font-semibold text-2xl md:text-4xl lg:text-5xl leading-tight relative w-5/6">
           #{params.slug}
         </h1>
         <span className="inline-block mt-2">
@@ -62,7 +62,7 @@ const Category = ({ params }) => {
       </div>
       <Categories categories={allCategories} active={params.slug} />
 
-      <div className="grid grid-cols-3 grid-rows-2 gap-16 mt-24 mx-32">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-y-10 sm:gap-16 mt-16 md:mt-24 px-5 sm:px-10 md:px-24 sxl:px-32">
         {blogs.map((blog, index) => (
           <article key={index} className="col-span-1 row-span-1 relative">
             <BlogLayoutThree blog={blog} />
