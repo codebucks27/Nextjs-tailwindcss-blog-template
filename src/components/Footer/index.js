@@ -38,22 +38,43 @@ const Footer = () => {
         />
       </form>
       <div className="flex items-center mt-8">
-          <Link href="" className="w-6 h-6 mr-4">
-            <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" />
-          </Link>
-          <Link href="" className="w-6 h-6 mr-4">
-            <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
-          </Link>
-          <Link href="" className="w-6 h-6 mr-4">
-            <GithubIcon className="fill-light dark:fill-dark hover:scale-125 transition-all ease duration-200" />
-          </Link>
-          <Link href="" className="w-6 h-6 mr-4">
-            <DribbbleIcon className="hover:scale-125 transition-all ease duration-200" />
-          </Link>
-        </div>
+        <a
+          href="https://www.linkedin.com/in/codebucks/"
+          className="w-6 h-6 mr-4"
+          aria-label="Reach out to me via LinkedIn"
+        >
+          <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" />
+        </a>
+        <a
+          href="https://twitter.com/code_bucks"
+          className="w-6 h-6 mr-4"
+          aria-label="Reach out to me via Twitter"
+        >
+          <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
+        </a>
+        <a
+          href="https://github.com/codebucks27"
+          className="w-6 h-6 mr-4"
+          aria-label="Check my profile on Github"
+        >
+          <GithubIcon className="fill-light dark:fill-dark hover:scale-125 transition-all ease duration-200" />
+        </a>
+        <a
+          href="https://dribbble.com"
+          className="w-6 h-6 mr-4"
+          aria-label="Check my profile on Dribbble"
+        >
+          <DribbbleIcon className="hover:scale-125 transition-all ease duration-200" />
+        </a>
+      </div>
       <div className="w-full  mt-16 md:mt-24 flex flex-col md:flex-row items-center justify-between px-4 sm:px-8 py-6 border-t border-solid border-light dark:border-dark  font-medium relative">
-        <span className="text-center">&copy; 2023 CodeBucks. All rights reserved.</span>
-        <Link className="text-center underline my-4 md:my-0" href="/sitemap.xml">
+        <span className="text-center">
+          &copy; 2023 CodeBucks. All rights reserved.
+        </span>
+        <Link
+          className="text-center underline my-4 md:my-0"
+          href="/sitemap.xml"
+        >
           Sitemap.xml
         </Link>
         <div className="text-center">
@@ -62,7 +83,6 @@ const Footer = () => {
             CodeBucks
           </a>
         </div>
-      
       </div>
     </footer>
   );

@@ -24,7 +24,7 @@ const Header = () => {
     <header className="w-full p-4 px-5 sm:px-10 flex items-center justify-between ">
       <Logo />
 
-      <button onClick={toggle} className="inline-block sm:hidden  z-50">
+      <button onClick={toggle} className="inline-block sm:hidden  z-50" aria-label="Hamburger Menu">
         <div className="w-6 cursor-pointer transition duration-300">
           <div className="relative w-full  h-auto flex flex-col justify-between items-center">
             <span
@@ -123,18 +123,18 @@ const Header = () => {
       </nav>
       
       <div className="hidden sm:flex items-center">
-        <Link href="" className="w-6 h-6 mr-4">
+        <a href="https://www.linkedin.com/in/codebucks/" className="w-6 h-6 mr-4" aria-label="Reach out to me via LinkedIn">
           <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" />
-        </Link>
-        <Link href="" className="w-6 h-6 mr-4">
+        </a>
+        <a href="https://twitter.com/code_bucks" className="w-6 h-6 mr-4" aria-label="Reach out to me via Twitter">
           <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
-        </Link>
-        <Link href="" className="w-6 h-6 mr-4">
+        </a>
+        <a href="https://github.com/codebucks27" className="w-6 h-6 mr-4" aria-label="Check my profile on Github">
           <GithubIcon className="fill-dark dark:fill-light hover:scale-125 transition-all ease duration-200" />
-        </Link>
-        <Link href="" className="w-6 h-6 mr-4">
+        </a>
+        <a href="https://dribbble.com" className="w-6 h-6 mr-4" aria-label="Check my profile on Dribbble">
           <DribbbleIcon className="hover:scale-125 transition-all ease duration-200" />
-        </Link>
+        </a>
       </div>
 
       {/* <Search /> */}

@@ -10,7 +10,7 @@ const HomeCoverSection = ({ allBlogs }) => {
   if (!blog) throw new Error(`Blog not found for slug: ${params.slug}`);
 
   return (
-    <article className="flex flex-col items-start justify-end mx-5 sm:mx-10  relative h-[70vh] sm:h-[85vh]">
+    <article className="flex flex-col items-start justify-end mx-5 sm:mx-10  relative h-[60vh] sm:h-[85vh]">
       <div className=" absolute top-0 left-0 bottom-0 right-0 h-full bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-3xl dark:shadow-light/30 dark:shadow-sm z-0" />
       <Image
         src={blog.image.filePath.replace("../public", "")}

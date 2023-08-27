@@ -15,7 +15,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="mt-12  text-base  xs:text-lg sm:text-xl  font-semibold leading-relaxed dark:font-normal"
     >
-      Hello! My name is{" "}
+      Hello! My name is
       <input
         type="text"
         placeholder="your full name"
@@ -29,7 +29,7 @@ const ContactForm = () => {
         className="outline-none border-0 p-0 mx-2 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray focus:border-gray bg-transparent"
         {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
       />{" "}
-      or reach me on
+      or reach out to me on
       <input
         type="tel"
         placeholder="your phone"
