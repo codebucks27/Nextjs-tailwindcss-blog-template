@@ -1,10 +1,11 @@
+// react/no-unescaped-entities
 import "./globals.css";
 import { Inter, Manrope } from "next/font/google";
 import { cx } from "../utils";
 import Header from "@/src//components/Header";
 import Footer from "../components/Footer";
 import siteMetadata from "../utils/siteMetaData";
-
+import Script from "next/script";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -36,8 +37,8 @@ export const metadata = {
     url: siteMetadata.siteUrl,
     siteName: siteMetadata.title,
     images: [siteMetadata.socialBanner],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   // alternates: {
   //   canonical: './',
@@ -51,22 +52,40 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   twitter: {
     title: siteMetadata.title,
-    card: 'summary_large_image',
+    card: "summary_large_image",
     images: [siteMetadata.socialBanner],
   },
-}
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={cx(manrope.variable,inter.variable, "font-mr bg-light dark:bg-dark")}>
+      <body
+        className={cx(
+          manrope.variable,
+          inter.variable,
+          "font-mr bg-light dark:bg-dark"
+        )}
+      >
+        <Script id="theme-switcher" strategy="beforeInteractive">
+          {`
+            if (
+              localStorage.getItem('theme') === 'dark' ||
+              (!('theme' in localStorage) &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches)
+            ) {
+              document.documentElement.classList.add('dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+            }`}
+        </Script>
         <Header />
         {children}
         <Footer />

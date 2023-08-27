@@ -25,10 +25,10 @@ const Header = () => {
       <Logo />
 
       <button onClick={toggle} className="inline-block sm:hidden  z-50">
-        <div class="w-6 cursor-pointer transition duration-300">
+        <div className="w-6 cursor-pointer transition duration-300">
           <div className="relative w-full  h-auto flex flex-col justify-between items-center">
             <span
-              class="absolute top-0 inline-block w-full h-0.5 bg-dark rounded transition-all ease duration-200"
+              className="absolute top-0 inline-block w-full h-0.5 bg-dark dark:bg-light rounded transition-all ease duration-200"
               style={{
                 transform: click
                   ? "rotate(-45deg) translateY(0)"
@@ -38,7 +38,7 @@ const Header = () => {
               &nbsp;
             </span>
             <span
-              class="absolute top-0 inline-block w-full h-0.5 bg-dark rounded transition-all ease duration-200"
+              className="absolute top-0 inline-block w-full h-0.5 bg-dark dark:bg-light rounded transition-all ease duration-200"
               style={{
                 opacity: click
                   ? "0"
@@ -48,7 +48,7 @@ const Header = () => {
               &nbsp;
             </span>
             <span
-              class="absolute top-0 inline-block w-full h-0.5 bg-dark rounded transition-all ease duration-200"
+              className="absolute top-0 inline-block w-full h-0.5 bg-dark dark:bg-light rounded transition-all ease duration-200"
               style={{
                 transform: click
                   ? "rotate(45deg) translateY(0)"
@@ -130,7 +130,7 @@ const Header = () => {
           <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
         </Link>
         <Link href="" className="w-6 h-6 mr-4">
-          <GithubIcon className="hover:scale-125 transition-all ease duration-200" />
+          <GithubIcon className="fill-dark dark:fill-light hover:scale-125 transition-all ease duration-200" />
         </Link>
         <Link href="" className="w-6 h-6 mr-4">
           <DribbbleIcon className="hover:scale-125 transition-all ease duration-200" />

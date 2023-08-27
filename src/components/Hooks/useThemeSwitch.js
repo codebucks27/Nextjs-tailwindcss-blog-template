@@ -1,58 +1,55 @@
-"use client";
+"use client"
 import { useState, useEffect } from "react";
 
 export function useThemeSwitch() {
+  // Use constants for your query and storage key
   const preferDarkQuery = "(prefers-color-scheme: dark)";
-  const [mode, setMode] = useState("");
+  const storageKey = "theme";
+
+  // Create a function to toggle the theme
+  const toggleTheme = (theme) => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    window.localStorage.setItem(storageKey, theme);
+  };
+
+  // Initialize the mode based on user preference or media query
+  const getUserPreference = () => {
+    const userPref = window.localStorage.getItem(storageKey);
+    if (userPref) {
+      return userPref;
+    }
+    return window.matchMedia(preferDarkQuery).matches ? "dark" : "light";
+  };
+
+  const [mode, setMode] = useState(getUserPreference);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(preferDarkQuery);
-    const userPref = window.localStorage.getItem("theme");
 
     const handleChange = () => {
-      if (userPref) {
-        let check = userPref === "dark" ? "dark" : "light";
-        setMode(check);
-        if (check === "dark") {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-        return check;
-      } else {
-        setMode(mediaQuery.matches ? "dark" : "light");
-        window.localStorage.setItem(
-          "theme",
-          mediaQuery.matches ? "dark" : "light"
-        );
-        if (mediaQuery.matches) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-        return window.matchMedia(preferDarkQuery).matches ? "dark" : "light";
-      }
+      const newMode = getUserPreference();
+      setMode(newMode);
+      toggleTheme(newMode);
     };
 
+    // Initial setup
     handleChange();
 
     mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
   }, []);
 
+  // Update the theme when the mode changes
   useEffect(() => {
-    if (mode === "dark") {
-      document.documentElement.classList.add("dark");
-      window.localStorage.setItem("theme", "dark");
-    }
-
-    if (mode === "light") {
-      document.documentElement.classList.remove("dark");
-      window.localStorage.setItem("theme", "light");
-    }
+    toggleTheme(mode);
   }, [mode]);
 
-  // we're doing it this way instead of as an effect so we only
-  // set the localStorage value if they explicitly change the default
   return [mode, setMode];
 }

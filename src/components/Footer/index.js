@@ -13,7 +13,7 @@ const Footer = () => {
   console.log(errors);
 
   return (
-    <footer className="mt-16 rounded-2xl bg-dark dark:bg-accentDark/80 m-2 sm:m-10 pt-0 flex flex-col items-center text-light dark:text-dark">
+    <footer className="mt-16 rounded-2xl bg-dark dark:bg-accentDark/90 m-2 sm:m-10 pt-0 flex flex-col items-center text-light dark:text-dark">
       <h3 className="mt-16 font-medium text-center dark:font-bold capitalize text-2xl sm:text-3xl lg:text-4xl px-4">
         interesting stories | updates | guides
       </h3>
@@ -37,9 +37,7 @@ const Footer = () => {
           className="bg-dark dark:bg-light text-light dark:text-dark py-1 px-3 sm:px-5 rounded font-medium cursor-pointer"
         />
       </form>
-      <div className="w-full  mt-16 md:mt-24 flex flex-col md:flex-row items-center justify-between px-4 sm:px-8 py-6 border-t border-solid border-light dark:border-dark  font-medium">
-        <span className="text-center">&copy; 2023 CodeBucks. All rights reserved.</span>
-        <div className="flex items-center my-4 sm:my-0">
+      <div className="flex items-center mt-8">
           <Link href="" className="w-6 h-6 mr-4">
             <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" />
           </Link>
@@ -47,18 +45,24 @@ const Footer = () => {
             <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
           </Link>
           <Link href="" className="w-6 h-6 mr-4">
-            <GithubIcon className="hover:scale-125 transition-all ease duration-200" />
+            <GithubIcon className="fill-light dark:fill-dark hover:scale-125 transition-all ease duration-200" />
           </Link>
           <Link href="" className="w-6 h-6 mr-4">
             <DribbbleIcon className="hover:scale-125 transition-all ease duration-200" />
           </Link>
         </div>
+      <div className="w-full  mt-16 md:mt-24 flex flex-col md:flex-row items-center justify-between px-4 sm:px-8 py-6 border-t border-solid border-light dark:border-dark  font-medium relative">
+        <span className="text-center">&copy; 2023 CodeBucks. All rights reserved.</span>
+        <Link className="text-center underline my-4 md:my-0" href="/sitemap.xml">
+          Sitemap.xml
+        </Link>
         <div className="text-center">
           Made with ❤ by{" "}
           <a href="https://devdreaming.com" className="underline">
             CodeBucks
           </a>
         </div>
+      
       </div>
     </footer>
   );

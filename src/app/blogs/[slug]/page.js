@@ -115,6 +115,8 @@ const BlogLayout = ({ params }) => {
             height={blog.image.height}
             alt={blog.title}
             className="w-full h-full object-cover object-center"
+            priority
+            sizes="100vw"
           />
         </div>
 
