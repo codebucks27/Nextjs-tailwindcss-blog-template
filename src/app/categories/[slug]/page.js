@@ -51,7 +51,7 @@ const Category = ({ params }) => {
   if (!blogs) throw new Error(`Blogs not found for slug: ${params.slug}`);
 
   return (
-    <article className=" mt-8 sm:mt-12 flex flex-col">
+    <article className=" mt-8 sm:mt-12 flex flex-col text-dark dark:text-light">
       <div className="px-5 sm:px-10 md:px-24 sxl:px-32 flex flex-col">
         <h1 className=" group mt-6 font-semibold text-2xl md:text-4xl lg:text-5xl leading-tight relative w-5/6">
           #{params.slug}
