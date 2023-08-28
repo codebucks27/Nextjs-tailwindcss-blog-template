@@ -123,16 +123,16 @@ const Header = () => {
       </nav>
       
       <div className="hidden sm:flex items-center">
-        <a href="https://www.linkedin.com/in/codebucks/" className="w-6 h-6 mr-4" aria-label="Reach out to me via LinkedIn">
+        <a href={siteMetadata.linkedin} className="w-6 h-6 mr-4" aria-label="Reach out to me via LinkedIn">
           <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
-        <a href="https://twitter.com/code_bucks" className="w-6 h-6 mr-4" aria-label="Reach out to me via Twitter">
+        <a href={siteMetadata.twitter} className="w-6 h-6 mr-4" aria-label="Reach out to me via Twitter">
           <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
-        <a href="https://github.com/codebucks27" className="w-6 h-6 mr-4" aria-label="Check my profile on Github">
+        <a href={siteMetadata.github} className="w-6 h-6 mr-4" aria-label="Check my profile on Github">
           <GithubIcon className="fill-dark dark:fill-light hover:scale-125 transition-all ease duration-200" />
         </a>
-        <a href="https://dribbble.com" className="w-6 h-6 mr-4" aria-label="Check my profile on Dribbble">
+        <a href={siteMetadata.dribbble} className="w-6 h-6 mr-4" aria-label="Check my profile on Dribbble">
           <DribbbleIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
       </div>

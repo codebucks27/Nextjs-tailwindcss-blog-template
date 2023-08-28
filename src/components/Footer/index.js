@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { DribbbleIcon, GithubIcon, LinkedinIcon, TwitterIcon } from "../Icons";
+import siteMetadata from "@/src/utils/siteMetaData";
 
 const Footer = () => {
   const {
@@ -39,28 +40,28 @@ const Footer = () => {
       </form>
       <div className="flex items-center mt-8">
         <a
-          href="https://www.linkedin.com/in/codebucks/"
+          href={siteMetadata.linkedin}
           className="w-6 h-6 mr-4"
           aria-label="Reach out to me via LinkedIn"
         >
           <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
         <a
-          href="https://twitter.com/code_bucks"
+          href={siteMetadata.twitter}
           className="w-6 h-6 mr-4"
           aria-label="Reach out to me via Twitter"
         >
           <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
         <a
-          href="https://github.com/codebucks27"
+          href={siteMetadata.github}
           className="w-6 h-6 mr-4"
           aria-label="Check my profile on Github"
         >
           <GithubIcon className="fill-light dark:fill-dark hover:scale-125 transition-all ease duration-200" />
         </a>
         <a
-          href="https://dribbble.com"
+          href={siteMetadata.dribbble}
           className="w-6 h-6 mr-4"
           aria-label="Check my profile on Dribbble"
         >

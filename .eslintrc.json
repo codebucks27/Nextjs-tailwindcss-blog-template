@@ -1,5 +1,5 @@
 {
-  "extends": ["next/core-web-vitals"],
+  "extends": "next/core-web-vitals",
   "rules": {
     // Add other Next.js core-web-vitals rules here if needed
 
