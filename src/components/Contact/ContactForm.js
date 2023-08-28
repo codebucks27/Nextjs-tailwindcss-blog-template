@@ -13,7 +13,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mt-12  text-base  xs:text-lg sm:text-xl  font-semibold leading-relaxed dark:font-normal"
+      className="mt-12  text-base  xs:text-lg sm:text-xl  font-medium leading-relaxed dark:font-normal font-in"
     >
       Hello! My name is
       <input
@@ -43,7 +43,11 @@ const ContactForm = () => {
         rows={3}
         className="w-full outline-none border-0 placeholder:text-lg p-0  focus:ring-0 border-b border-gray focus:border-gray bg-transparent"
       />
-      <input type="submit" value="Send Request" className="mt-8 font-semibold inline-block capitalize text-lg sm:text-xl py-2 sm:py-3 px-6 sm:px-8 border-2 border-solid border-dark rounded cursor-pointer dark:border-light" />
+      <input
+        type="submit"
+        value="Send Request"
+        className="mt-8 font-medium inline-block capitalize text-lg sm:text-xl py-2 sm:py-3 px-6 sm:px-8 border-2 border-solid border-dark rounded cursor-pointer dark:border-light"
+      />
     </form>
   );
 };

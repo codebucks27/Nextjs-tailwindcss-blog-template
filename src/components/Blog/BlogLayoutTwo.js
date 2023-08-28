@@ -5,7 +5,7 @@ import Link from "next/link";
 const BlogLayoutTwo = ({ blog }) => {
   return (
     <div className="group grid grid-cols-12 gap-4 items-center text-dark dark:text-light" >
-      <div className="col-span-12 lg:col-span-4 h-full rounded-xl overflow-hidden">
+      <Link className="col-span-12 lg:col-span-4 h-full rounded-xl overflow-hidden" href={blog.url} aria-label={`Blog link for blog.title`}>
         <Image
           src={blog.image.filePath.replace("../public", "")}
           placeholder="blur"
@@ -16,7 +16,7 @@ const BlogLayoutTwo = ({ blog }) => {
           className="aspect-square w-full h-full object-cover object-center group-hover:scale-105 transition-all ease duration-300"
           sizes="(max-width: 640px) 100vw,(max-width: 1024px) 50vw, 33vw"
         />
-      </div>
+      </Link>
 
       <div className="col-span-12 lg:col-span-8 w-full">
         <span className="uppercase text-accent dark:text-accentDark font-semibold text-xs sm:text-sm">
