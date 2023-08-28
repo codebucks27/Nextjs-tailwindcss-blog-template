@@ -17,14 +17,14 @@ const BlogLayoutOne = ({ blog }) => {
         sizes="(max-width: 1180px) 100vw, 50vw"
       />
 
-      <div className="absolute bottom-0 p-6 sm:p-10 w-full z-20">
+      <div className="absolute bottom-0 p-4 xs:p-6 sm:p-10 w-full z-20">
         <Tag
           name={blog.tags[0]}
           link={`/categories/${blog.tags[0]}`}
           className="px-4 sm:px-6 text-xs sm:text-sm py-1 sm:py-2 !border"
         />
         <Link className="inline-block" href={blog.url}>
-          <h2 className="mt-2 sm:mt-4 font-medium capitalize text-light text-base sm:text-xl md:text-2xl relative ">
+          <h2 className="mt-2 sm:mt-4 font-medium capitalize text-light text-sm xs:text-base sm:text-xl md:text-2xl relative ">
             {/* {blog.title} */}
             <span className="bg-gradient-to-r from-accent to-accent bg-[length:0px_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_6px] dark:from-accentDark/50 dark:to-accentDark/50">
               {blog.title}
