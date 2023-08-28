@@ -11,6 +11,7 @@ import {
   SunIcon,
   TwitterIcon,
 } from "../Icons";
+import siteMetadata from "@/src/utils/siteMetaData";
 
 const Header = () => {
   const [mode, setMode] = useThemeSwitch();
