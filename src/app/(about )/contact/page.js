@@ -1,9 +1,5 @@
 import ContactForm from "@/src/components/Contact/ContactForm";
-import dynamic from "next/dynamic";
-// import LottieAnimation from "@/src/components/Contact/LottieAnimation";
-
-const LottieAnimation = dynamic(() => import('@/src/components/Contact/LottieAnimation'))
-
+import LottieAnimation from "@/src/components/Contact/LottieAnimation";
 
 export const metadata = {
   title: "Contact Me",
