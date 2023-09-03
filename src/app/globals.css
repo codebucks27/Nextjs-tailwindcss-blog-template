@@ -3,90 +3,79 @@
 @tailwind utilities;
 
 html{
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
+
+h1>a>.icon.icon-link:before,
+h2>a>.icon.icon-link:before,
+h3>a>.icon.icon-link:before{
+content: "#";
+font-size: 0.8rem;
+}
+
+h2 > a, h3>a {
+    text-decoration: none !important;
 }
 
 code {
-  counter-reset: line;
-}
+    counter-reset: line;
+  }
+   
+  code > [data-line]::before {
+    counter-increment: line;
+    content: counter(line);
+   
+    /* Other styling */
+    display: inline-block;
+    width: 1rem;
+    margin-right: 2rem;
+    text-align: right;
+    color: gray;
+  }
+   
+  code[data-line-numbers-max-digits='2'] > [data-line]::before {
+    width: 2rem;
+  }
+   
+  code[data-line-numbers-max-digits='3'] > [data-line]::before {
+    width: 3rem;
+  }
 
-code > [data-line]::before {
-  counter-increment: line;
-  content: counter(line);
+  [data-highlighted-line]{
+    background-color: rgba(255,255,255,0.1) !important;
+    padding: 2px;
+    padding-left: 0;
+    padding-right: 4px;
+    border-radius: 2px;
+    border-left: 2px solid #7B00D3;
+  }
 
-  /* Other styling */
-  display: inline-block;
-  width: 1rem;
-  margin-right: 2rem;
-  text-align: right;
-  color: gray;
-}
+  [data-highlighted-chars]{
+    background-color: rgba(255,255,255,0.2) !important;
+    padding: 2px;
+    border-radius: 2px;
+  }
 
-code[data-line-numbers-max-digits="2"] > [data-line]::before {
-  width: 2rem;
-}
 
-code[data-line-numbers-max-digits="3"] > [data-line]::before {
-  width: 3rem;
-}
+  [data-rehype-pretty-code-fragment]{
+    position: relative;
+  }
 
-/* To highlight the line in code block */
+  [data-rehype-pretty-code-title]{
+    position: absolute;
+    right: 0;
+    background-color: #7B00D3;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 1rem;
+    border-end-start-radius: 4px;
+  }
 
-[data-highlighted-line] {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  padding: 2px;
-  padding-left: 0;
-  padding-right: 4px;
-  border-radius: 2px;
-  border-left:2px solid  #7b00d3;
- 
-}
-
-/* To highlight the character in code block */
-
-[data-highlighted-chars] {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  padding: 2px;
-  border-radius: 2px;
-}
-
-/* Styling the title for the codeblock */
-
-[data-rehype-pretty-code-fragment] {
-  position: relative;
-}
-
-[data-rehype-pretty-code-title] {
-  position: absolute;
-  right: 0;
-  background-color: #7b00d3;
-  color: #fff;
-  padding: 4px 8px 4px 8px;
-  font-size: 1rem;
-  border-end-start-radius: 4px;
-}
-
-/* Styling the caption for the codeblock */
-
-[data-rehype-pretty-code-caption] {
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  text-align: center;
-  font-size: 1rem;
-  color: #747474;
-}
-
-/* Styling the title for the codeblock */
-
-h1 > a > .icon.icon-link:before,
-h2 > a > .icon.icon-link:before,
-h3 > a > .icon.icon-link:before {
-  content: "#";
-  font-size: 0.8rem;
-}
-
-h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
-  text-decoration: none !important;
-}
-
+  [data-rehype-pretty-code-caption]{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    color: #747474;
+  }
