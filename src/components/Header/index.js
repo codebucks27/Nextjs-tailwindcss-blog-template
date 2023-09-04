@@ -83,10 +83,10 @@ const toggle = () =>{
             </button>
         </nav>
         <div className=" hidden sm:flex items-center">
-            <a href={siteMetadata.linkedin} className="inline-block w-6 h-6 mr-4" aria-label="Reach out to me via LinkedIn"><LinkedinIcon className="hover:scale-125 transition-all ease duration-200" /></a>
-            <a href={siteMetadata.twitter} className="inline-block w-6 h-6 mr-4" aria-label="Reach out to me via Twitter"><TwitterIcon className="hover:scale-125 transition-all ease duration-200" /></a>
-            <a href={siteMetadata.github} className="inline-block w-6 h-6 mr-4" aria-label="Check my profile on Github"><GithubIcon className="  hover:scale-125 transition-all ease duration-200 dark:fill-light" /></a>
-            <a href={siteMetadata.dribbble} className="inline-block w-6 h-6 mr-4" aria-label="Check my profile on Dribbble"><DribbbleIcon className="hover:scale-125 transition-all ease duration-200" /></a>
+            <a href={siteMetadata.linkedin} className="inline-block w-6 h-6 mr-4" target="_blank" aria-label="Reach out to me via LinkedIn"><LinkedinIcon className="hover:scale-125 transition-all ease duration-200" /></a>
+            <a href={siteMetadata.twitter} className="inline-block w-6 h-6 mr-4" target="_blank" aria-label="Reach out to me via Twitter"><TwitterIcon className="hover:scale-125 transition-all ease duration-200" /></a>
+            <a href={siteMetadata.github} className="inline-block w-6 h-6 mr-4" target="_blank" aria-label="Check my profile on Github"><GithubIcon className="  hover:scale-125 transition-all ease duration-200 dark:fill-light" /></a>
+            <a href={siteMetadata.dribbble} className="inline-block w-6 h-6 mr-4" target="_blank" aria-label="Check my profile on Dribbble"><DribbbleIcon className="hover:scale-125 transition-all ease duration-200" /></a>
         </div>
     </header>
   )
