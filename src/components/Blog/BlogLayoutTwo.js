@@ -37,7 +37,7 @@ const BlogLayoutTwo = ({ blog }) => {
           </h2>
         </Link>
 
-        <span className="inline-block w-full capitalize text-dark/50 dark:text-light/50 font-semibold  text-xs sm:text-base">
+        <span className="inline-block w-full capitalize text-gray dark:text-light/50 font-semibold  text-xs sm:text-base">
           {format(new Date(blog.publishedAt), "MMMM dd, yyyy")}
         </span>
       </div>
