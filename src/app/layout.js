@@ -35,10 +35,10 @@ export const metadata = {
     type: "website",
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
+      index: false,
       follow: false,
       noimageindex: true,
       "max-video-preview": -1,
