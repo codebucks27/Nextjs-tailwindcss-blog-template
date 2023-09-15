@@ -26,7 +26,7 @@ const Footer = () => {
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mt-6 w-fit sm:min-w-[384pxs] flex items-stretch bg-light dark:bg-dark p-1 sm:p-2 rounded mx04"
+        className="mt-6 w-fit sm:min-w-[384px] flex items-stretch bg-light dark:bg-dark p-1 sm:p-2 rounded mx04"
       >
         <input
           type="email"
@@ -41,27 +41,55 @@ const Footer = () => {
         />
       </form>
       <div className="flex items-center mt-8">
-        <a href={siteMetadata.linkedin} className="inline-block w-6 h-6 mr-4" target="_blank" aria-label="Reach out to me via LinkedIn">
+        <a
+          href={siteMetadata.linkedin}
+          className="inline-block w-6 h-6 mr-4"
+          aria-label="Reach out to me via LinkedIn"
+          target="_blank"
+        >
           <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
-        <a href={siteMetadata.twitter} className="inline-block w-6 h-6 mr-4" target="_blank" aria-label="Reach out to me via Twitter">
+        <a
+          href={siteMetadata.twitter}
+          className="inline-block w-6 h-6 mr-4"
+          aria-label="Reach out to me via Twitter"
+          target="_blank"
+        >
           <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
-        <a href={siteMetadata.github} className="inline-block w-6 h-6 mr-4 fill-light" target="_blank" aria-label="Check my profile on Github">
+        <a
+          href={siteMetadata.github}
+          className="inline-block w-6 h-6 mr-4 fill-light"
+          aria-label="Check my profile on Github"
+          target="_blank"
+        >
           <GithubIcon className="fill-light dark:fill-dark  hover:scale-125 transition-all ease duration-200" />
         </a>
-        <a href={siteMetadata.dribbble} className="inline-block w-6 h-6 mr-4" target="_blank" aria-label="Check my profile on Dribbble">
+        <a
+          href={siteMetadata.dribbble}
+          className="inline-block w-6 h-6 mr-4"
+          aria-label="Check my profile on Dribbble"
+          target="_blank"
+        >
           <DribbbleIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
       </div>
 
       <div className="w-full  mt-16 md:mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex  flex-col md:flex-row items-center justify-between">
-        <span className="text-center">&copy;2023 CodeBucks. All rights reserved.</span>
-        <Link href="/sitemap.xml" className="text-center underline my-4 md:my-0">
-            sitemap.xml
+        <span className="text-center">
+          &copy;2023 CodeBucks. All rights reserved.
+        </span>
+        <Link
+          href="/sitemap.xml"
+          className="text-center underline my-4 md:my-0"
+        >
+          sitemap.xml
         </Link>
         <div className="text-center">
-            Made with &hearts; by <a href="https://devdreaming.com" target="_blank" className="underline">CodeBucks</a>
+          Made with &hearts; by{" "}
+          <a href="https://devdreaming.com" className="underline" target="_blank">
+            CodeBucks
+          </a>
         </div>
       </div>
     </footer>
