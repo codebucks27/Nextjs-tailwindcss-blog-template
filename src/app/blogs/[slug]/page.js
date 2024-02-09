@@ -5,6 +5,7 @@ import siteMetadata from "@/src/utils/siteMetaData";
 import { allBlogs } from "contentlayer/generated";
 import { slug } from "github-slugger";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
@@ -58,6 +59,11 @@ export async function generateMetadata({ params }) {
 
 export default function BlogPage({ params }) {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
+
+  if(!blog){
+    notFound()
+  }
+
 
   let imageList = [siteMetadata.socialBanner];
   if (blog.image) {
