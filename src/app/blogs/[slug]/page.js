@@ -2,17 +2,18 @@ import BlogDetails from "@/src/components/Blog/BlogDetails";
 import RenderMdx from "@/src/components/Blog/RenderMdx";
 import Tag from "@/src/components/Elements/Tag";
 import siteMetadata from "@/src/utils/siteMetaData";
-import { allBlogs } from "contentlayer/generated";
-import { slug } from "github-slugger";
+import { blogs } from '@/.velite/generated'
+import { slug as slugify } from "github-slugger";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
+  return blogs.map((blog) => ({ slug: blog.slug }));
 }
 
 export async function generateMetadata({ params }) {
-  const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
+  const {slug} = await params
+  const blog = blogs.find((blog) => blog.slug === slug);
   if (!blog) {
     return;
   }
@@ -23,8 +24,8 @@ export async function generateMetadata({ params }) {
   let imageList = [siteMetadata.socialBanner];
   if (blog.image) {
     imageList =
-      typeof blog.image.filePath === "string"
-        ? [siteMetadata.siteUrl + blog.image.filePath.replace("../public", "")]
+      typeof blog.image.src === "string"
+        ? [siteMetadata.siteUrl + blog.image.src]
         : blog.image;
   }
   const ogImages = imageList.map((img) => {
@@ -57,19 +58,54 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function BlogPage({ params }) {
-  const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
+
+function TableOfContentsItem({ item, level = "two" }){
+  return (
+    <li className="py-1">
+      <a
+        href={item.url}
+        data-level={level}
+        className="data-[level=two]:pl-0 data-[level=two]:pt-2
+                  data-[level=two]:border-t border-solid border-dark/40
+                  data-[level=three]:pl-4
+                  sm:data-[level=three]:pl-6
+                  flex items-center justify-start"
+      >
+        {level === "three" && (
+          <span className="flex w-1 h-1 rounded-full bg-dark mr-2">&nbsp;</span>
+        )}
+        <span className="hover:underline">{item.title}</span>
+      </a>
+      {item.items.length > 0 && (
+        <ul className="mt-1">
+          {item.items.map((subItem) => (
+            <TableOfContentsItem 
+              key={subItem.url} 
+              item={subItem} 
+              level="three"
+            />
+          ))}
+        </ul>
+      )}
+    </li>
+  );
+}
+
+export default async function BlogPage({ params }) {
+  const {slug} = await params
+  const blog = blogs.find((blog) => {
+    return blog.slug === slug
+  });
 
   if(!blog){
     notFound()
   }
 
-
   let imageList = [siteMetadata.socialBanner];
   if (blog.image) {
     imageList =
-      typeof blog.image.filePath === "string"
-        ? [siteMetadata.siteUrl + blog.image.filePath.replace("../public", "")]
+      typeof blog.image.src === "string"
+        ? [siteMetadata.siteUrl + blog.image.src]
         : blog.image;
   }
 
@@ -99,7 +135,7 @@ export default function BlogPage({ params }) {
         <div className="w-full z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Tag
             name={blog.tags[0]}
-            link={`/categories/${slug(blog.tags[0])}`}
+            link={`/categories/${slugify(blog.tags[0])}`}
             className="px-6 text-sm py-2"
           />
           <h1
@@ -110,9 +146,9 @@ export default function BlogPage({ params }) {
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60 dark:bg-dark/40" />
         <Image
-          src={blog.image.filePath.replace("../public", "")}
+          src={blog.image.src}
           placeholder="blur"
-          blurDataURL={blog.image.blurhashDataUrl}
+          blurDataURL={blog.image.blurDataURL}
           alt={blog.title}
           width={blog.image.width}
           height={blog.image.height}
@@ -133,30 +169,9 @@ export default function BlogPage({ params }) {
               Table Of Content
             </summary>
             <ul className="mt-4 font-in text-base">
-              {blog.toc.map((heading) => {
-                return (
-                  <li key={`#${heading.slug}`} className="py-1">
-                    <a
-                      href={`#${heading.slug}`}
-                      data-level={heading.level}
-                      className="data-[level=two]:pl-0  data-[level=two]:pt-2
-                                       data-[level=two]:border-t border-solid border-dark/40
-                                       data-[level=three]:pl-4
-                                       sm:data-[level=three]:pl-6
-                                       flex items-center justify-start
-                                       "
-                    >
-                      {heading.level === "three" ? (
-                        <span className="flex w-1 h-1 rounded-full bg-dark mr-2">
-                          &nbsp;
-                        </span>
-                      ) : null}
-
-                      <span className="hover:underline">{heading.text}</span>
-                    </a>
-                  </li>
-                );
-              })}
+              {blog.toc.map((item) => (
+                <TableOfContentsItem key={item.url} item={item} />
+              ))}
             </ul>
           </details>
         </div>
@@ -164,6 +179,5 @@ export default function BlogPage({ params }) {
       </div>
     </article>
     </>
-   
   );
 }

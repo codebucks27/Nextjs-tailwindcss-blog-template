@@ -1,17 +1,12 @@
 "use client"
 import React from 'react'
-import { useMDXComponent } from 'next-contentlayer/hooks'
-import Image from 'next/image'
-
+import MDXContent from './MdxContent'
 
 const mdxComponents = {
-    Image
+  // Add any custom components here
 }
 
 const RenderMdx = ({blog}) => {
-
-    const MDXContent = useMDXComponent(blog.body.code)
-
   return (
     <div className='col-span-12  lg:col-span-8 font-in prose sm:prose-base md:prose-lg max-w-max
     prose-blockquote:bg-accent/20 
@@ -29,12 +24,8 @@ const RenderMdx = ({blog}) => {
     dark:prose-li:marker:text-accentDark
 
     first-letter:text-3xl
-    sm:first-letter:text-5xl
-    
-
-
-    '> 
-        <MDXContent components={mdxComponents}/>
+    sm:first-letter:text-5xl'> 
+        <MDXContent code={blog.body} components={mdxComponents}/>
     </div>
   )
 }

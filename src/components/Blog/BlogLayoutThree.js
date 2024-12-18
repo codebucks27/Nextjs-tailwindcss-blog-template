@@ -8,9 +8,9 @@ const BlogLayoutThree = ({ blog }) => {
     <div className="group flex flex-col items-center text-dark dark:text-light">
       <Link href={blog.url} className="h-full rounded-xl overflow-hidden">
         <Image
-          src={blog.image.filePath.replace("../public", "")}
+          src={blog.image.src}
           placeholder="blur"
-          blurDataURL={blog.image.blurhashDataUrl}
+          blurDataURL={blog.image.blurDataURL}
           alt={blog.title}
           width={blog.image.width}
           height={blog.image.height}

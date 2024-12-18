@@ -16,9 +16,9 @@ const HomeCoverSection = ({blogs}) => {
             <div className='absolute top-0 left-0 bottom-0 right-0 h-full
             bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-3xl z-0
             ' />
-        <Image src={blog.image.filePath.replace("../public", "")}
+        <Image src={blog.image.src}
         placeholder='blur'
-        blurDataURL={blog.image.blurhashDataUrl}
+        blurDataURL={blog.image.blurDataURL}
         alt={blog.title}
         fill
         className='w-full h-full object-center object-cover rounded-3xl -z-10'
