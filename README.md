@@ -16,8 +16,9 @@ https://youtu.be/1QGLHOaRLwM <br />
 
 Checkout My Personal blog: [DevDreaming](https://devdreaming.com/)<br />
 
-> NOTE: In the youtube tutorial I have used contentlayer for the markdown files. Since contentlayer is not actively maintained, I have switched to Velite for the markdown files. If you want to checkout the contentlayer please switch to the contentlayer branch.
-
+---
+>### NOTE: In the youtube tutorial I have used contentlayer for the markdown files. Since contentlayer is not actively maintained, I have switched to Velite for the markdown files. If you want to checkout the contentlayer please switch to the contentlayer branch.
+---
 
 ### ⭐DO NOT FORGET TO STAR THIS REPO⭐
 
