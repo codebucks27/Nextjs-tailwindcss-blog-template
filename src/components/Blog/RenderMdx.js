@@ -16,6 +16,10 @@ const RenderMdx = ({blog}) => {
     prose-blockquote:not-italic
     prose-blockquote:rounded-r-lg
 
+    prose-figure:relative
+    prose-figcaption:mt-1
+    prose-figcaption:mb-2
+
     prose-li:marker:text-accent
 
     dark:prose-invert
