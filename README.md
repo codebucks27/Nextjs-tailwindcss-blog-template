@@ -25,6 +25,23 @@ Checkout My Personal blog: [DevDreaming](https://devdreaming.com/)<br />
 >### NOTE: In the youtube tutorial I have used contentlayer for the markdown files. Since contentlayer is not actively maintained, I have switched to [Velite.js](https://velite.js.org/) for the markdown files. If you want to checkout the contentlayer please switch to the [contentlayer](https://github.com/codebucks27/Nextjs-tailwindcss-blog-template/tree/Contentlayer) branch.
 ---
 
+## 🚀 2026 Modernization Update
+
+The repo has been refreshed to run on the latest stable versions of every dependency. Highlights:
+
+- **Bun** is now the package manager (`bun install`, `bun dev`, `bun run build`).
+- **Next.js 16** with Turbopack as the default for dev and build.
+- **React 19**.
+- **Tailwind CSS v4** — CSS-first config in `src/app/globals.css` (`@theme`, `@custom-variant dark`, `@plugin`); `tailwind.config.js` removed and `@tailwindcss/postcss` replaces autoprefixer.
+- **ESLint 10 flat config** (`eslint.config.mjs`) with `next/core-web-vitals`.
+- **Shiki 4** + latest `rehype-pretty-code`, `velite`, `@supabase/supabase-js`, `react-hook-form`, `next-sitemap`, `sharp`, and all rehype/remark plugins.
+- Velite now runs as a `predev` / `prebuild` script (Turbopack does not support the old custom webpack plugin).
+- Async `params` migration applied to dynamic routes for Next 16.
+
+> **Looking for the old version?** The pre-update code is preserved in git history — check out commit [`186f9ee`](https://github.com/codebucks27/Nextjs-tailwindcss-blog-template/commit/186f9ee) (or any commit before this update) to use the original Next.js 15 + Tailwind v3 + ESLint 9 setup from the YouTube tutorial.
+
+---
+
 ### ⭐DO NOT FORGET TO STAR THIS REPO⭐
 
 ### Images of The Portfolio Website:
