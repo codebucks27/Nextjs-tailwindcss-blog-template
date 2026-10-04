@@ -5,14 +5,21 @@ const sharedComponents = {
   Image
 }
 
-const useMDXComponent = (code) => {
-  const fn = new Function(code)
-  return fn({ ...runtime }).default
+// Reuse the component type so rerenders preserve MDX state and DOM nodes.
+const compiledComponents = new Map()
+
+const getMDXComponent = (code) => {
+  if (!compiledComponents.has(code)) {
+    const fn = new Function(code)
+    compiledComponents.set(code, fn({ ...runtime }).default)
+  }
+  return compiledComponents.get(code)
 }
 
- const MDXContent = ({ code, components, ...props }) => {
-  const Component = useMDXComponent(code)
-  return <Component components={{ ...sharedComponents, ...components }} {...props} />
+const MDXRenderer = ({ Component, ...props }) => <Component {...props} />
+
+const MDXContent = ({ code, components, ...props }) => {
+  return <MDXRenderer Component={getMDXComponent(code)} components={{ ...sharedComponents, ...components }} {...props} />
 }
 
 export default MDXContent

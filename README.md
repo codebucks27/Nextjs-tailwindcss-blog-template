@@ -80,3 +80,15 @@ For more Images please check the [project images](https://github.com/codebucks27
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Stable dependency update (October 2026)
+
+Use Node.js 22 or newer and Bun 1.4.2. Dependencies and `bun.lock` now use stable compatible releases, including Next.js 16.3.8, React 19.3, Tailwind CSS 4.3, and Velite 0.4. ESLint uses 9.39.5 because Next.js's stable lint plugins do not support ESLint 10.
+
+The required migration uses Next.js's native flat ESLint config, corrects the existing rule options and JSX escaping, and caches compiled MDX components to preserve their identity across renders. Keep the existing Supabase environment values set for builds.
+
+```sh
+bun install --frozen-lockfile
+bun run lint
+bun run build
+bun run dev
+```
