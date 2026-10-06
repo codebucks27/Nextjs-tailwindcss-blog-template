@@ -15,7 +15,7 @@ https://youtu.be/1QGLHOaRLwM <br />
 [![YouTube Video Views](https://img.shields.io/youtube/views/1QGLHOaRLwM?style=social)](https://youtu.be/1QGLHOaRLwM)<br />
 
 ---
-✨ Checkout my brand new Saas application -> [AI Headshot Generator](https://www.smartheadshots.ai)
+
 
 ---
 
@@ -92,3 +92,7 @@ bun run lint
 bun run build
 bun run dev
 ```
+
+## Other project
+
+From the creator: [SmartHeadshots AI — AI headshot generator](https://www.smartheadshots.ai/).
